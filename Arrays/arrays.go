@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+func change(s ...string) {
+	s[0] = "Go"
+}
+
 func changeLocal(num [5]int) {
 	num[0] = 55
 	fmt.Println("inside function ", num)
@@ -34,7 +38,23 @@ func main() {
 		fmt.Printf("O valor de i é %d, o valor de valor é %d \n", i, valor)
 	}
 
-
 	//Slice
-	
+
+	darr := [...]int{57, 89, 90, 82, 100, 78, 67, 69, 59}
+	dslice := darr[2:5]
+	fmt.Println("array before", darr)
+	for i := range dslice {
+		dslice[i]++
+	}
+	fmt.Println("array after", darr)
+	fmt.Printf("\nCapacidade do slice %d\n", cap(dslice))
+
+	i := make([]int, 5, 6)
+	fmt.Println(i)
+
+	//Variatic
+	welcome := []string{"hello", "world"}
+	change(welcome...)
+	fmt.Println(welcome)
+
 }
