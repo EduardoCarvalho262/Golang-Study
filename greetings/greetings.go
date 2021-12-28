@@ -28,7 +28,7 @@ func Hellos(names []string) (map[string]string, error) {
 			return nil, err
 		}
 
-		//Adiciona a chave name com a mensagem
+		//Adiciona a chave name com a mensagem que tem
 		messages[name] = message
 	}
 	return messages, nil
